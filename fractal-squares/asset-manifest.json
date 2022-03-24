@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/fractal-squares/static/css/main.4ac3174f.css",
+    "main.js": "/fractal-squares/static/js/main.d8c5c71c.js",
+    "static/js/787.9609f61c.chunk.js": "/fractal-squares/static/js/787.9609f61c.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/fractal-squares/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
+    "static/media/bootstrap-icons.woff2?": "/fractal-squares/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
+    "service-worker.js": "/fractal-squares/service-worker.js",
+    "index.html": "/fractal-squares/index.html",
+    "main.4ac3174f.css.map": "/fractal-squares/static/css/main.4ac3174f.css.map",
+    "main.d8c5c71c.js.map": "/fractal-squares/static/js/main.d8c5c71c.js.map",
+    "787.9609f61c.chunk.js.map": "/fractal-squares/static/js/787.9609f61c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ac3174f.css",
+    "static/js/main.d8c5c71c.js"
+  ]
+}
