@@ -1,0 +1,32 @@
+{
+  "name": "beneluwi.github.io",
+  "version": "1.0.0",
+  "description": "Benedikt Lüken-Winkels' Personal Homepage",
+  "main": "index.js",
+  "scripts": {
+    "check": "prettier --check \".\"",
+    "format": "prettier --write \".\"",
+    "test": "npm run check",
+    "start": "LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 jekyll serve --livereload",
+    "build": "LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 jekyll build"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeneLuWi/beneluwi.github.io.git"
+  },
+  "keywords": [
+    "Homepage",
+    "Blog",
+    "Portfolio"
+  ],
+  "author": "Benedikt Lüken-Winkels",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BeneLuWi/beneluwi.github.io/issues"
+  },
+  "homepage": "https://github.com/BeneLuWi/beneluwi.github.io#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
