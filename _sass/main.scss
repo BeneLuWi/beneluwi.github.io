@@ -1,1 +1,14 @@
+@import "./vendor/bootstrap/functions";
+@import "./vendor/bootstrap/variables";
+@import "./vendor/bootstrap/mixins";
+
+
+
+$body-color: #eeeeee;
+$body-bg: #263C5C;
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #ff4136
+);
+
 @import "./vendor/bootstrap/bootstrap";
