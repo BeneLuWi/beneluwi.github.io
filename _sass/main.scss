@@ -3,12 +3,70 @@
 @import "./vendor/bootstrap/mixins";
 
 
+$body-color: #d2d2d2;
+$body-bg: #136a8a;
 
-$body-color: #eeeeee;
-$body-bg: #263C5C;
 $theme-colors: (
-  "primary": #0074d9,
-  "danger": #ff4136
+        "primary": #136a8a,
+        "danger": #ff4136
 );
 
 @import "./vendor/bootstrap/bootstrap";
+
+body {
+  background: -webkit-linear-gradient(to right, #267871, #136a8a); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+/* From https://css.glass */
+.glass {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+}
+
+
+/***********************************************************************************************************************
+*
+* Apps/Projects
+*
+***********************************************************************************************************************/
+
+.app-card {
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.app-image {
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.app-card:hover img {
+  transform: scale(1.1);
+}
+
+.app-details {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  color: #252525;
+  height: 100%;
+  padding: 1rem;
+  opacity: 0;
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+}
+
+.app-details:hover {
+  opacity: 100%;
+}
