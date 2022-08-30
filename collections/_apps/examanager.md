@@ -2,7 +2,10 @@
 title: "Examanager"
 github: "https://github.com/BeneLuWi/examanagerii"
 link: "http://examanager.de/"
-tech: reactjs mongo-db spring-boot css
+tech:
+  - react-original 
+  - mongodb-plain
+  - spring-plain
 image: examanager-screenshot.jpg
 ---
 
