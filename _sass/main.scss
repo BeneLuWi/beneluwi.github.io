@@ -5,7 +5,7 @@
 
 $body-color: #d2d2d2;
 $body-bg: #136a8a;
-
+$badge-font-weight: $font-weight-bold;
 $theme-colors: (
         "primary": #136a8a,
         "danger": #ff4136
@@ -13,9 +13,28 @@ $theme-colors: (
 
 @import "./vendor/bootstrap/bootstrap";
 
+/***********************************************************************************************************************
+*
+* Helper
+*
+***********************************************************************************************************************/
+
+a, a:hover {
+  color: $body-color;
+}
+
+/***********************************************************************************************************************
+*
+* Background Color
+*
+***********************************************************************************************************************/
+
+$gradient-from: #267871;
+$gradient-to: #136a8a;
+
 body {
   background: -webkit-linear-gradient(to right, #267871, #136a8a); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, $gradient-from, $gradient-to); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -27,6 +46,23 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.1px);
   -webkit-backdrop-filter: blur(7.1px);
+}
+
+/***********************************************************************************************************************
+*
+* Posts
+*
+***********************************************************************************************************************/
+
+.post-card {
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.post-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.01);
+  cursor: pointer;
 }
 
 

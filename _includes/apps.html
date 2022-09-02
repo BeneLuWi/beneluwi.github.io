@@ -1,25 +1,27 @@
-<div class="min-vh-100">
-  <div class="display-4">Projects</div>
-  <div class="container">
-    <div class="row g-3">
-      {% for app in site.apps %}
-      <div class="col-xl-4 col-md-6 col-sm-12">
-        <div class="card app-card">
-          <img class="img-fluid app-image" src="/assets/images/{{ app.image }}" alt="{{app.title}}-Logo">
-          <div class="app-details text-black">
-            <div class="display-6">{{ app.title }}</div>
-            <p>{{ app.content}}</p>
-            <div>Technologies used:</div>
-            <div class="p-3">
-              {% for tech in app.tech %}
-              <i class="fs-2 m-1 devicon-{{tech}}"></i>
-              {% endfor %}
+<section id="projects">
+  <div class="min-vh-100">
+    <div class="display-4">Projects</div>
+    <div class="container">
+      <div class="row g-3">
+        {% for app in site.apps %}
+        <div class="col-xl-4 col-md-6 col-sm-12 p-5">
+          <div class="card app-card">
+            <img class="img-fluid app-image" src="/assets/images/{{ app.image }}" alt="{{app.title}}-Logo">
+            <div class="app-details text-black">
+              <div class="display-6">{{ app.title }}</div>
+              <p>{{ app.content}}</p>
+              <div>Technologies used:</div>
+              <div class="p-3">
+                {% for tech in app.tech %}
+                <i class="fs-2 m-1 devicon-{{tech}}"></i>
+                {% endfor %}
+              </div>
+              <a class="btn btn-primary" target="_blank" href="{{ app.link }}">View App</a>
             </div>
-            <a class="btn btn-primary" target="_blank" href="{{ app.link }}">View App</a>
           </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
-</div>
+</section>

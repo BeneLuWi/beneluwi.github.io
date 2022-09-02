@@ -2,7 +2,15 @@
 layout: post
 title:  "Repast Simphony without Eclipse"
 date:   2022-08-09 09:18:59 +0200
-categories: agent-based-simulation repast-simphony intellij
+categories: 
+  - agent-based-modelling 
+  - repast-simphony 
+  - intellij
+tags: 
+  - agent-based-modelling 
+  - repast-simphony 
+  - IntelliJ
+description: This is a small guide on how to use Repast Simphony in the Intellij IDEs, which turns out to be quite tricky... 
 ---
 # Run Model (almost) w/o Eclipse
 

@@ -1,5 +1,5 @@
 ---
-title: "Foldrs - Klappgeschichten"
+title: "Foldrs"
 link: "https://play.google.com/store/apps/details?id=com.foldrs"
 tech: 
   - react-original 

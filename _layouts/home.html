@@ -1,7 +1,35 @@
 ---
 layout: default
 ---
-<div>
-  {{ content }}
-  {% include apps.html %}
-</div>
+<!--Apps-->
+
+<section id="hero">
+  <div class="vh-100 d-flex flex-column justify-content-center">
+    <div class="display-4">Hi,</div>
+    <div class="display-6 m-3">I'm Benedikt, a German software engineer. I am working at the German Research Center for
+      Artificial Intelligence (DFKI).
+    </div>
+    <div class="display-6 m-3">I'm passionate about coding and experimenting with interactive programs.</div>
+    <hr/>
+    <div class="d-flex justify-content-between">
+      <div>
+        <small>Location</small><br/>
+        <small>Trier, Germany</small>
+      </div>
+      <div>
+        <small>Web</small><br/>
+        <small><a href="https://blw.yeah">blw.net</a></small>
+      </div>
+      <div>
+        <small>Contact</small><br/>
+        <small><a href="mailto:b.lueken.winkels@gmail.com">Email</a></small>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--Apps-->
+{% include apps.html %}
+<!--Posts-->
+{% include posts.html %}
+
