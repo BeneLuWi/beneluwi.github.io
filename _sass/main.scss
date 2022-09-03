@@ -23,6 +23,25 @@ a, a:hover {
   color: $body-color;
 }
 
+/* For all <code> */
+code {
+  font-family: monospace;
+  font-size: inherit;
+  color: $body-color;
+}
+
+/* Code in text */
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: #ffeff0;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+}
+
 /***********************************************************************************************************************
 *
 * Background Color
@@ -105,4 +124,15 @@ body {
 
 .app-details:hover {
   opacity: 100%;
+}
+
+/***********************************************************************************************************************
+*
+* About Me
+*
+***********************************************************************************************************************/
+
+.skills {
+  font-size: 1.3rem;
+  font-family: monospace
 }
