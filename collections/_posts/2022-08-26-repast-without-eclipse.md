@@ -3,9 +3,7 @@ layout: post
 title:  "Repast Simphony without Eclipse"
 date:   2022-08-09 09:18:59 +0200
 categories: 
-  - agent-based-modelling 
   - repast-simphony 
-  - intellij
 tags: 
   - agent-based-modelling 
   - repast-simphony 
