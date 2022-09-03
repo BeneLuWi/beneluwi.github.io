@@ -1,7 +1,9 @@
 @import "./vendor/bootstrap/functions";
 @import "./vendor/bootstrap/variables";
 @import "./vendor/bootstrap/mixins";
-
+@import "./vendor/fontawesome/css/fontawesome";
+@import "./vendor/fontawesome/css/brands";
+@import "./vendor/fontawesome/css/solid";
 
 $body-color: #d2d2d2;
 $body-bg: #136a8a;
@@ -135,4 +137,7 @@ body {
 .skills {
   font-size: 1.3rem;
   font-family: monospace
+}
+
+footer {
 }
