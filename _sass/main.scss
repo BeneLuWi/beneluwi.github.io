@@ -71,6 +71,17 @@ td > code {
   overflow: hidden;
   flex-direction: row;
   width: 100%;
+  animation: pop_in ease .2s 3s forwards;
+  transform: translateY(40px);
+}
+
+@keyframes pop_in {
+  from {
+    transform: translateY(40px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 768px) {
