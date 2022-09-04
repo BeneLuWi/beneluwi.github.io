@@ -5,6 +5,13 @@ layout: default
 <!--Apps-->
 <section id="hero">
   <div class="vh-100 d-flex flex-column justify-content-center">
+    <div class="position-fixed list-group" id="navigation">
+      <a class="list-group-item list-group-item-action" href="#hero">Welcome</a>
+      <a class="list-group-item list-group-item-action" href="#projects">Projects</a>
+      <a class="list-group-item list-group-item-action" href="#posts">Posts</a></li>
+      <a class="list-group-item list-group-item-action" href="#aboutme">About</a>
+    </div>
+
     <div class="display-4">Hi<span class="welcome-comma">,</span></div>
     <div class="welcome-text">
       <div class="display-6 m-3">
@@ -12,18 +19,18 @@ layout: default
         Intelligence (DFKI) as a researcher.
       </div>
       <div class="display-6 m-3">I'm passionate about coding and experimenting with web applications.</div>
-      <hr />
+      <hr/>
       <div class="d-flex justify-content-between">
         <div>
-          <small>Location</small><br />
+          <small>Location</small><br/>
           <small>Trier, Germany</small>
         </div>
         <div>
-          <small>Web</small><br />
+          <small>Web</small><br/>
           <small><a href="https://blw.yeah">blw.net</a></small>
         </div>
         <div>
-          <small>Contact</small><br />
+          <small>Contact</small><br/>
           <small><a href="mailto:b.lueken.winkels@gmail.com">Email</a></small>
         </div>
       </div>
@@ -39,10 +46,3 @@ layout: default
 <!--About Me-->
 <div class="mt-5"></div>
 {% include about.html %}
-
-<div class="position-fixed list-group" id="navigation" style="left: 10px; bottom: 200px">
-    <a class="list-group-item list-group-item-action" href="#hero">Welcome</a>
-    <a class="list-group-item list-group-item-action" href="#projects">Projects</a>
-    <a class="list-group-item list-group-item-action" href="#posts">Posts</a></li>
-    <a class="list-group-item list-group-item-action" href="#aboutme">About</a>
-</div>

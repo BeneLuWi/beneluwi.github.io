@@ -9,8 +9,8 @@ $body-color: #d2d2d2;
 $body-bg: #136a8a;
 $badge-font-weight: $font-weight-bold;
 $theme-colors: (
-  "primary": #136a8a,
-  "danger": #ff4136,
+        "primary": #136a8a,
+        "danger": #ff4136,
 );
 
 @import "./vendor/bootstrap/bootstrap";
@@ -48,6 +48,36 @@ td > code {
 
 /***********************************************************************************************************************
 *
+* Navigation
+*
+***********************************************************************************************************************/
+
+#navigation {
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(7.1px);
+  -webkit-backdrop-filter: blur(7.1px);
+  left: 10px;
+  bottom: 200px;
+  border: 0;
+  border-radius: 0;
+}
+
+#navigation a {
+  background: transparent;
+  transition: all .2s ease;
+}
+
+#navigation a.active {
+  background: rgba(255, 255, 255, 0.77);
+  color: $body-bg;
+  border: 0;
+  transform: translateX(10px);
+}
+
+
+/***********************************************************************************************************************
+*
 * Background Color
 *
 ***********************************************************************************************************************/
@@ -58,9 +88,9 @@ $gradient-to: #136a8a;
 body {
   background: -webkit-linear-gradient(to right, #267871, #136a8a); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to right,
-    $gradient-from,
-    $gradient-to
+                  to right,
+                  $gradient-from,
+                  $gradient-to
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   position: relative; /* Used for ScrollSpy */
 }

@@ -8,15 +8,15 @@
     <div class="container">
       <div class="row">
         {% for post in site.posts %}
-        <div class="col-xl-6 col-sm-12 p-5">
+        <div class="col-xl-6 col-sm-12 p-xl-5 p-sm-1">
           <a class="card glass post-card" href="{{ post.url }}" target="_blank">
             <div class="card-body">
               <h3>{{ post.title }}</h3>
               <div class="lead">{{ post.description }}</div>
               <hr />
-              <div class="d-flex">
+              <div class="d-flex flex-wrap">
                 {% for tag in post.tags %}
-                <div class="badge bg-primary me-1">{{ tag }}</div>
+                <div class="badge bg-primary m-1">{{ tag }}</div>
                 {% endfor %}
               </div>
             </div>
