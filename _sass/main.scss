@@ -52,27 +52,47 @@ td > code {
 *
 ***********************************************************************************************************************/
 
-#navigation {
+#nav-wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   z-index: 100;
+
+}
+
+#navigation {
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(7.1px);
   -webkit-backdrop-filter: blur(7.1px);
-  left: 10px;
-  bottom: 200px;
   border: 0;
-  border-radius: 0;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  flex-direction: row;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #navigation {
+    width: 500px;
+  }
 }
 
 #navigation a {
   background: transparent;
   transition: all .2s ease;
+  border: 0;
+  text-align: center;
+  flex: 1 1 auto !important
 }
 
 #navigation a.active {
   background: rgba(255, 255, 255, 0.77);
   color: $body-bg;
   border: 0;
-  transform: translateX(10px);
+  transform: translateY(-2px);
+  border-radius: 0;
 }
 
 

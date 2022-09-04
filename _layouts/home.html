@@ -2,47 +2,51 @@
 layout: default
 ---
 
-<!--Apps-->
-<section id="hero">
-  <div class="vh-100 d-flex flex-column justify-content-center">
-    <div class="position-fixed list-group" id="navigation">
-      <a class="list-group-item list-group-item-action" href="#hero">Welcome</a>
-      <a class="list-group-item list-group-item-action" href="#projects">Projects</a>
-      <a class="list-group-item list-group-item-action" href="#posts">Posts</a></li>
-      <a class="list-group-item list-group-item-action" href="#aboutme">About</a>
-    </div>
+<div id="nav-wrapper">
+  <nav class="list-group" id="navigation">
+    <a class="list-group-item list-group-item-action flex-fill" href="#hero">Welcome</a>
+    <a class="list-group-item list-group-item-action flex-fill" href="#projects">Projects</a>
+    <a class="list-group-item list-group-item-action flex-fill" href="#posts">Posts</a></li>
+    <a class="list-group-item list-group-item-action flex-fill" href="#aboutme">About</a>
+  </nav>
+</div>
 
-    <div class="display-4">Hi<span class="welcome-comma">,</span></div>
-    <div class="welcome-text">
-      <div class="display-6 m-3">
-        I'm Benedikt, a 28-year-old software engineer. I work at the German Research Center for Artificial
-        Intelligence (DFKI) as a researcher.
-      </div>
-      <div class="display-6 m-3">I'm passionate about coding and experimenting with web applications.</div>
-      <hr/>
-      <div class="d-flex justify-content-between">
-        <div>
-          <small>Location</small><br/>
-          <small>Trier, Germany</small>
+<div class="container-xxl">
+  <!--Hero-->
+  <section id="hero">
+    <div class="vh-100 d-flex flex-column justify-content-center">
+      <div class="display-4">Hi<span class="welcome-comma">,</span></div>
+      <div class="welcome-text">
+        <div class="display-6 m-3">
+          I'm Benedikt, a 28-year-old software engineer. I work at the German Research Center for Artificial
+          Intelligence (DFKI) as a researcher.
         </div>
-        <div>
-          <small>Web</small><br/>
-          <small><a href="https://blw.yeah">blw.net</a></small>
-        </div>
-        <div>
-          <small>Contact</small><br/>
-          <small><a href="mailto:b.lueken.winkels@gmail.com">Email</a></small>
+        <div class="display-6 m-3">I'm passionate about coding and experimenting with web applications.</div>
+        <hr/>
+        <div class="d-flex justify-content-between">
+          <div>
+            <small>Location</small><br/>
+            <small>Trier, Germany</small>
+          </div>
+          <div>
+            <small>Web</small><br/>
+            <small><a href="https://blw.yeah">blw.net</a></small>
+          </div>
+          <div>
+            <small>Contact</small><br/>
+            <small><a href="mailto:b.lueken.winkels@gmail.com">Email</a></small>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!--Apps-->
-<div class="mt-5"></div>
-{% include apps.html %}
-<!--Posts-->
-<div class="mt-5"></div>
-{% include posts.html %}
-<!--About Me-->
-<div class="mt-5"></div>
-{% include about.html %}
+  </section>
+  <!--Apps-->
+  <div class="mt-5"></div>
+  {% include apps.html %}
+  <!--Posts-->
+  <div class="mt-5"></div>
+  {% include posts.html %}
+  <!--About Me-->
+  <div class="mt-5"></div>
+  {% include about.html %}
+</div>
