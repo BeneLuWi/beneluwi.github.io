@@ -9,8 +9,8 @@ $body-color: #d2d2d2;
 $body-bg: #136a8a;
 $badge-font-weight: $font-weight-bold;
 $theme-colors: (
-        "primary": #136a8a,
-        "danger": #ff4136
+  "primary": #136a8a,
+  "danger": #ff4136,
 );
 
 @import "./vendor/bootstrap/bootstrap";
@@ -21,7 +21,8 @@ $theme-colors: (
 *
 ***********************************************************************************************************************/
 
-a, a:hover {
+a,
+a:hover {
   color: $body-color;
 }
 
@@ -41,8 +42,8 @@ td > code {
   background: $body-bg;
   word-wrap: break-word;
   box-decoration-break: clone;
-  padding: .1rem .3rem .2rem!important;
-  border-radius: .2rem;
+  padding: 0.1rem 0.3rem 0.2rem !important;
+  border-radius: 0.2rem;
 }
 
 /***********************************************************************************************************************
@@ -56,10 +57,12 @@ $gradient-to: #136a8a;
 
 body {
   background: -webkit-linear-gradient(to right, #267871, #136a8a); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, $gradient-from, $gradient-to); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: linear-gradient(
+    to right,
+    $gradient-from,
+    $gradient-to
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 
 /* From https://css.glass */
 .glass {
@@ -76,7 +79,6 @@ body {
 *
 ***********************************************************************************************************************/
 
-
 #welcome-text {
   animation: welcome 0.3s ease 1s forwards;
   opacity: 0;
@@ -90,7 +92,6 @@ body {
     opacity: 100%;
   }
 }
-
 
 /***********************************************************************************************************************
 *
@@ -113,21 +114,20 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  margin: 1rem
+  margin: 1rem;
 }
 
 .post-wrapper pre {
   padding: 1rem;
   border-radius: 10px;
   background: #343434;
-
 }
 
 .post-wrapper code {
   background: #343434;
   word-wrap: break-word;
   box-decoration-break: clone;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
 }
 
 h2 {
@@ -183,7 +183,7 @@ h2 {
 
 .skills {
   font-size: 1.3rem;
-  font-family: monospace
+  font-family: monospace;
 }
 
 footer {

@@ -1,14 +1,17 @@
 <section id="projects">
   <div class="min-vh-100">
     <div class="display-4">Projects</div>
-    <hr/>
-    <p>Here are some of my favourite hobby projects. They can also be found on my <a target="_blank" href="https://github.com/BeneLuWi">Github-Account</a>.</p>
+    <hr />
+    <p>
+      Here are some of my favourite hobby projects. They can also be found on my
+      <a target="_blank" href="https://github.com/BeneLuWi">Github-Account</a>.
+    </p>
     <div class="container">
       <div class="row">
         {% for app in site.apps %}
         <div class="col-xl-4 col-md-6 col-sm-12 p-5">
           <div class="card app-card">
-            <img class="img-fluid app-image" src="/assets/images/{{ app.image }}" alt="{{app.title}}-Logo">
+            <img class="img-fluid app-image" src="/assets/images/{{ app.image }}" alt="{{app.title}}-Logo" />
             <div class="app-details text-black">
               <div class="display-6">{{ app.title }}</div>
               <p>{{ app.content}}</p>
