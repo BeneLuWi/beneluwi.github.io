@@ -84,12 +84,14 @@ Go to `http://localhost:5000`
 
 - Clone the Repository
 - Create new project from existing sources and choose import project from external model
-  ![import](/assets/images/2022-08-26-repast-without-eclipse/import.png)
+
+![import](/assets/images/2022-08-26-repast-without-eclipse/import.png)
 - Select the `build.xml` file in the project root and set it as `Ant Build File` from the context menu
 - Open the `Ant View` and edit the properties of the `build` Ant Target
 - Add the `plugins_loc` property with the path to the `plugins` folder as value
 - Add the `model_loc` property with the value `./JZombies_Demo.rs`
-  ![ant-properties](/assets/images/2022-08-26-repast-without-eclipse/ant-properties.png)
+
+![ant-properties](/assets/images/2022-08-26-repast-without-eclipse/ant-properties.png)
 - 🔨 Build the Model by executing the `build` Ant Target
 - 🚀 Run the Model by executing one of the `run-*` Ant Targets
 
@@ -99,7 +101,8 @@ Example for `run-model`:
 
 - In the Context Menu of Ant Target select `Create Run Configuration`
 - In the pop-up at `Before Launch` remove the default `Build` process and dd the `build` Ant Target
-  ![run-config](/assets/images/2022-08-26-repast-without-eclipse/run-config.png)
+
+![run-config](/assets/images/2022-08-26-repast-without-eclipse/run-config.png)
 
 ### Syntax Highlighting in Intellij
 
@@ -108,11 +111,13 @@ Under `File > Project Structure > Project Settings > Modules > JZombies_Demo > D
 - Add the `lib` folder in the project root
 - Add the `repast.simphony.bin_and_src.jar` from the `plugins`
   folder: `[path_to_plugins]/plugins/repast.simphony.bin_and_src_2.9.0/repast.simphony.bin_and_src.jar`
-  ![import-module](/assets/images/2022-08-26-repast-without-eclipse/import-module.png)
+
+![import-module](/assets/images/2022-08-26-repast-without-eclipse/import-module.png)
 
 ### Add a Debugger 🐞
 
 - Create a `Remote JVM Debug` run configuration (the default settings should be correct)
 - Run the `debug-model` Ant Target
 - Start the `Debugger`
-  ![debugger](/assets/images/2022-08-26-repast-without-eclipse/debugger.png)
+
+![debugger](/assets/images/2022-08-26-repast-without-eclipse/debugger.png)
