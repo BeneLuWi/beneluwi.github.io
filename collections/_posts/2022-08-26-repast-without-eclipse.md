@@ -4,7 +4,7 @@ title: "Repast Simphony (almost) without Eclipse"
 date: 2022-08-09 09:18:59 +0200
 image: "/assets/images/2022-08-26-repast-without-eclipse/butterfly.jpg"
 image_caption: Photo by <a href="https://unsplash.com/@sandym10?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sandy Millar</a> on <a href="https://unsplash.com/license?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+
 categories:
   - repast-simphony
 tags:

@@ -62,6 +62,7 @@ body {
     $gradient-from,
     $gradient-to
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative; /* Used for ScrollSpy */
 }
 
 /* From https://css.glass */
@@ -115,7 +116,7 @@ body {
   cursor: pointer;
 }
 
-.post-wrapper{
+.post-wrapper {
   max-width: 700px;
 }
 

@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   </head>
-  <body>
-    <div class="container">{{ content }}</div>
+  <body data-bs-spy="scroll" data-bs-target="#navigation" data-bs-offset="10">
+    <div class="container-xxl">{{ content }}</div>
     <footer>
       <hr />
       <div class="d-flex justify-content-around p-5">
@@ -37,5 +37,6 @@
         <span>Benedikt Lüken-Winkels - Baltzstraße 6 - 54296 Trier</span>
       </div>
     </footer>
+    <script src="/assets/js/vendor/bootstrap/bootstrap.bundle.min.js"></script>
   </body>
 </html>
