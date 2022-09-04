@@ -10,7 +10,6 @@
     "start": "LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 bundle exec jekyll serve --livereload",
     "build": "LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 bundle exec jekyll build"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BeneLuWi/beneluwi.github.io.git"

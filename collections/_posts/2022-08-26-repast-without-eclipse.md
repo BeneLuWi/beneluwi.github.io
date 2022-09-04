@@ -1,19 +1,20 @@
 ---
 layout: post
-title:  "Repast Simphony without Eclipse"
-date:   2022-08-09 09:18:59 +0200
-categories: 
-  - repast-simphony 
-tags: 
-  - agent-based-modelling 
-  - repast-simphony 
+title: "Repast Simphony without Eclipse"
+date: 2022-08-09 09:18:59 +0200
+categories:
+  - repast-simphony
+tags:
+  - agent-based-modelling
+  - repast-simphony
   - IntelliJ
-description: This is a small guide on how to use Repast Simphony in the Intellij IDEs, which turns out to be quite tricky... 
+description: This is a small guide on how to use Repast Simphony in the Intellij IDEs, which turns out to be quite tricky...
 ---
+
 # Run Model (almost) w/o Eclipse
 
 This project uses the Repast Simphony JZombies Model, taken from the [Repast Java Tutorials](https://repast.github.io/docs/RepastJavaGettingStarted.pdf) and shows how to use Repast Simphony (almost) without Eclipse.
-This is especially useful, when the model is built in a `ci` pipeline or one wants to use another IDE, like Intellij IDEA. 
+This is especially useful, when the model is built in a `ci` pipeline or one wants to use another IDE, like Intellij IDEA.
 
 The approach is developed and widely used by the team of the topic field [Cognitive Social Simulation](https://www.dfki.de/en/web/research/research-departments/smart-data-knowledge-services/tf-cognitive-social-simulation) of the Research Department Smart Data & Knowledge Services at DFKI.
 
@@ -86,12 +87,14 @@ Go to `http://localhost:5000`
 - Create new project from existing sources and choose import project from external model
 
 ![import](/assets/images/2022-08-26-repast-without-eclipse/import.png)
+
 - Select the `build.xml` file in the project root and set it as `Ant Build File` from the context menu
 - Open the `Ant View` and edit the properties of the `build` Ant Target
 - Add the `plugins_loc` property with the path to the `plugins` folder as value
 - Add the `model_loc` property with the value `./JZombies_Demo.rs`
 
 ![ant-properties](/assets/images/2022-08-26-repast-without-eclipse/ant-properties.png)
+
 - 🔨 Build the Model by executing the `build` Ant Target
 - 🚀 Run the Model by executing one of the `run-*` Ant Targets
 
