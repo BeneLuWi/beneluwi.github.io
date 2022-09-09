@@ -1,7 +1,7 @@
 ---
 title: "Wikiplaydia"
 github: "https://github.com/BeneLuWi/wikiplaydia"
-link: "https://beneluwi.github.io/apps/wikiplaydia/"
+link: "https://beluwi.de/apps/wikiplaydia/"
 tech:
   - react-original
   - pwa
@@ -9,4 +9,4 @@ tech:
 image: wikiplaydia-logo.jpg
 ---
 
-In Fractal-Squares you can create images by recursively subdividing either squares or triangles and transform into one another
+Wikiplaydia is a game in the semantic web of Wikipedia. Find a certain entry only using internal links.

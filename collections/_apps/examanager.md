@@ -9,4 +9,4 @@ tech:
 image: examanager-screenshot.jpg
 ---
 
-In Fractal-Squares you can create images by recursively subdividing either squares or triangles and transform into one another
+Examanager is a web app for teachers to manage exams and their classes' results. 

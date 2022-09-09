@@ -9,4 +9,4 @@ tech:
 image: foldrs-logo.jpg
 ---
 
-In Fractal-Squares you can create images by recursively subdividing either squares or triangles and transform into one another
+Foldrs allows you to write stories while only seeing the last user's sentence.
