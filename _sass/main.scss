@@ -189,6 +189,11 @@ body {
   border-radius: 10px;
 }
 
+.post-wrapper p:has(> img) {
+  display: flex;
+  justify-content: center;
+}
+
 .post-wrapper pre {
   padding: 1rem;
   border-radius: 10px;
