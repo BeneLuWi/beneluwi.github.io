@@ -19,7 +19,13 @@ This is especially useful, when the model is built in a `ci` pipeline or one wan
 
 The approach is developed and widely used by the team of the topic field [Cognitive Social Simulation](https://www.dfki.de/en/web/research/research-departments/smart-data-knowledge-services/tf-cognitive-social-simulation) of the Research Department Smart Data & Knowledge Services at DFKI.
 
+### [Check out the Code](https://github.com/DFKI/Repast-Simphony-Ant.git)
+
 ## Requirements
+
+```shell
+git clone https://github.com/DFKI/Repast-Simphony-Ant.git
+```
 
 Install [`adoptopenjdk11`](https://adoptium.net/?variant=openjdk11)
 
@@ -89,7 +95,7 @@ Go to `http://localhost:5000`
 
 ![import](/assets/images/2022-08-26-repast-without-eclipse/import.png)
 
-- Select the `build.xml` file in the project root and set it as `Ant Build File` from the context menu
+- Select the [`build.xml`](https://github.com/DFKI/Repast-Simphony-Ant/blob/main/build.xml) file in the project root and set it as `Ant Build File` from the context menu
 - Open the `Ant View` and edit the properties of the `build` Ant Target
 - Add the `plugins_loc` property with the path to the `plugins` folder as value
 - Add the `model_loc` property with the value `./JZombies_Demo.rs`
