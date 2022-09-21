@@ -9,14 +9,14 @@
     <div class="container">
       <div class="row">
         {% for app in site.apps %}
-        <div class="col-xl-4 col-md-6 col-sm-12 p-5">
+        <div class="col-xl-4 col-md-6 col-sm-12 p-3 p-md-5">
           <div class="card app-card">
             <img class="img-fluid app-image" src="/assets/images/{{ app.image }}" alt="{{app.title}}-Logo" />
             <div class="app-details text-black">
               <div class="display-6">{{ app.title }}</div>
-              <p>{{ app.content}}</p>
+              {{ app.content}}
               <div>Technologies used:</div>
-              <div class="p-3">
+              <div class="p-2">
                 {% for tech in app.tech %}
                 <i class="fs-2 m-1 devicon-{{tech}}"></i>
                 {% endfor %}
