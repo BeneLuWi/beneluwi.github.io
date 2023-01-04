@@ -1,11 +1,11 @@
 ---
 title: "Examanager"
-github: "https://github.com/BeneLuWi/examanagerii"
-link: "http://examanager.de/"
+github: "https://github.com/BeneLuWi/examanager_v3"
+link: "https://github.com/BeneLuWi/examanager_v3"
 tech:
   - react-original
   - mongodb-plain
-  - spring-plain
+  - fastapi
 image: examanager-screenshot.jpg
 ---
 
