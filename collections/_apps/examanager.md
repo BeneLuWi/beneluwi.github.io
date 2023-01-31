@@ -5,8 +5,9 @@ link: "https://github.com/BeneLuWi/examanager_v3"
 tech:
   - react-original
   - mongodb-plain
-  - fastapi
-image: examanager-screenshot.jpg
+  - fastapi-plain
+  - docker-plain
+image: examanager-logo.jpg
 ---
 
 Examanager is a web app for teachers to manage exams and their classes' results. 
