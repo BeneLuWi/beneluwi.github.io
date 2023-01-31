@@ -7,7 +7,7 @@ tech:
   - mongodb-plain
   - fastapi-plain
   - docker-plain
-image: examanager-logo.jpg
+image: examanager-logo.jpeg
 ---
 
 Examanager is a web app for teachers to manage exams and their classes' results. 

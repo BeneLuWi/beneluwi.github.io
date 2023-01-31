@@ -5,7 +5,7 @@ link: "https://github.com/BeneLuWi/teamer"
 tech:
   - typescript-plain
   - nodejs-plain
-image: examanager-logo.jpg
+image: teamer-logo.jpg
 ---
 
 TEAmer is a simple tea timer for the terminal.
