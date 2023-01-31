@@ -1,5 +1,5 @@
 ---
-title: "Examanager"
+title: "TEAmer"
 github: "https://github.com/BeneLuWi/teamer"
 link: "https://github.com/BeneLuWi/teamer"
 tech:
