@@ -1,9 +1,10 @@
 ---
 title: "Examanager"
-github: "https://github.com/BeneLuWi/examanager_v3"
-link: "https://github.com/BeneLuWi/examanager_v3"
+github: "https://github.com/BeneLuWi/teamer"
+link: "https://github.com/BeneLuWi/teamer"
 tech:
   - typescript-plain
+  - nodejs-plain
 image: examanager-logo.jpg
 ---
 
