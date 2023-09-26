@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/apps/wikiplaydia/static/css/main.26d1fc0f.chunk.css",
+    "main.js": "/apps/wikiplaydia/static/js/main.eb977905.chunk.js",
+    "main.js.map": "/apps/wikiplaydia/static/js/main.eb977905.chunk.js.map",
+    "runtime-main.js": "/apps/wikiplaydia/static/js/runtime-main.5944e4e9.js",
+    "runtime-main.js.map": "/apps/wikiplaydia/static/js/runtime-main.5944e4e9.js.map",
+    "static/js/2.652af9b6.chunk.js": "/apps/wikiplaydia/static/js/2.652af9b6.chunk.js",
+    "static/js/2.652af9b6.chunk.js.map": "/apps/wikiplaydia/static/js/2.652af9b6.chunk.js.map",
+    "index.html": "/apps/wikiplaydia/index.html",
+    "precache-manifest.64345815dbdf8ada213892987211647e.js": "/apps/wikiplaydia/precache-manifest.64345815dbdf8ada213892987211647e.js",
+    "service-worker.js": "/apps/wikiplaydia/service-worker.js",
+    "static/css/main.26d1fc0f.chunk.css.map": "/apps/wikiplaydia/static/css/main.26d1fc0f.chunk.css.map",
+    "static/js/2.652af9b6.chunk.js.LICENSE.txt": "/apps/wikiplaydia/static/js/2.652af9b6.chunk.js.LICENSE.txt",
+    "static/media/all.css": "/apps/wikiplaydia/static/media/fa-solid-900.ec763292.svg",
+    "static/media/logo-noback-256.png": "/apps/wikiplaydia/static/media/logo-noback-256.8f258b77.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5944e4e9.js",
+    "static/js/2.652af9b6.chunk.js",
+    "static/css/main.26d1fc0f.chunk.css",
+    "static/js/main.eb977905.chunk.js"
+  ]
+}
