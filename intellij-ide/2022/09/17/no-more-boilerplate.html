@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reduce Boilerplate Code with File Templates in IntelliJ</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="description" content="Be more productive with the use of file templates for your React Components and blog posts">
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#navigation" data-bs-offset="10">
+    <div><div class="container post-wrapper shadow">
+  <div class="d-flex justify-content-end">
+    <code class="p-2 mt-2 mb-2">
+      <a target="_blank" href="https://beluwi.de" class="text-decoration-none">Benedikt Lüken-Winkels</a>
+      <a target="_blank" href="https://github.com/BeneLuWi" class="text-decoration-none">
+        <i class="devicon-github-original"></i>
+      </a>
+      <a target="_blank" href="https://www.xing.com/profile/Benedikt_LuekenWinkels/cv" class="text-decoration-none">
+        <i class="fa-brands fa-xing"></i>
+      </a>
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/benedikt-l%C3%BCken-winkels/"
+        class="text-decoration-none"
+      >
+        <i class="devicon-linkedin-plain"></i>
+      </a>
+      <a target="_blank" href="mailto:b.lueken.winkels@gmail.com" class="text-decoration-none">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </code>
+  </div>
+
+  <h2 class="mt-0">Reduce Boilerplate Code with File Templates in IntelliJ</h2>
+  <div class="mb-3 mt-3">
+    <img src="/assets/images/2022-09-17-no-more-boilerplate/gears.jpg" alt="Article Banner Image" class="rounded-0 m-0" />
+    <div class="d-flex justify-content-center">
+      <small>Photo by <a href="https://unsplash.com/@mikehindle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mike Hindle</a> on <a href="https://unsplash.com/s/photos/machine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
+    </div>
+  </div>
+  <p>While I enjoy writing reusable code and templating, I don’t really like the actual copying and pasting, 
+modifying filenames only to see later on that I forgot to modify certain areas.</p>
+
+<p>If you use Jetbrains IDEs you probably already used <code class="language-plaintext highlighter-rouge">File and Code Templates</code> without knowing that you can create your 
+own templates, that do most of this for you…</p>
+
+<h2 id="easier-jekyll-blogging-with-file-templates-in-jetbrains">Easier Jekyll Blogging with File Templates in Jetbrains</h2>
+
+<ul>
+  <li>Go to <code class="language-plaintext highlighter-rouge">Preferences &gt; Editor &gt; File and Code Templates</code> or use the global Search <code class="language-plaintext highlighter-rouge">⬆⬆</code>(double shift) and
+search <code class="language-plaintext highlighter-rouge">File and Code Templates</code>, if you’re a cool short-cutter</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">+</code> to add a template</li>
+  <li>Name it e.g. <code class="language-plaintext highlighter-rouge">Jekyll Blog Post</code> with the <code class="language-plaintext highlighter-rouge">md</code> extension</li>
+</ul>
+
+<p>You can use good number of variables to include logic and simplify/automate some of your blogging life, even in the file
+name (!).</p>
+
+<p>Since Jekyll Posts use a date in the file name, we can set the <code class="language-plaintext highlighter-rouge">File name</code> to: <code class="language-plaintext highlighter-rouge">${YEAR}-${MONTH}-${DAY}-${NAME}</code>.
+If you now use the template, you are asked to enter a file name and voilà: You already saved the time to look at the
+calendar for the new blog post!</p>
+
+<p><img src="/assets/images/2022-09-17-no-more-boilerplate/test-template.jpg" alt="Create Blog Post" /></p>
+
+<p><img src="/assets/images/2022-09-17-no-more-boilerplate/file-name.jpg" alt="New File Name with Date" /></p>
+
+<p>Now you can further edit the template and go crazy.
+I would recommend to at least cover the basics in the <code class="language-plaintext highlighter-rouge">Jekyll Front Matter</code>, so the template looks like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">${NAME}</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}:${SECOND} +0200</span>
+<span class="na">categories</span><span class="pi">:</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>You might find, that the predefined variables are not sufficient to your automation needs.
+Simply add any variable you want to use in the template, like <code class="language-plaintext highlighter-rouge">${main_category}</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">${NAME}</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}:${SECOND} +0200</span>
+<span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">${main_category}</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">new file</code> prompt now has an additional field <code class="language-plaintext highlighter-rouge">main category</code>, whose value is then inserted in the created file.</p>
+
+<p>Your finished template could look something like this:</p>
+
+<p><img src="/assets/images/2022-09-17-no-more-boilerplate/blog-template.jpg" alt="Blog Template" /></p>
+
+<h2 id="templating-for-react-components">Templating for React Components</h2>
+
+<p><em>If you only came here for the React Component Template, check out the upper part of the tutorial on how to create a file template</em> 😉</p>
+
+<p>Of course these file templates can simplify your everyday programming life as well. 
+If you have a certain file structure for e.g. your <code class="language-plaintext highlighter-rouge">React Components</code> this approach can greatly reduce the boilerplate
+code you have to write:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">FunctionComponent</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">}</span><span class="nx">Props</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="kd">const</span> <span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">}:</span>
+
+<span class="nx">FunctionComponent</span> <span class="o">&lt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">}</span><span class="nx">Props</span> <span class="o">&gt;</span> <span class="o">=</span> <span class="p">({})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="cm">/*******************************************************************************************************************
+   *
+   *  Hooks
+   *
+   *******************************************************************************************************************/</span>
+
+
+  <span class="cm">/*******************************************************************************************************************
+   *
+   *  Functions
+   *
+   *******************************************************************************************************************/</span>
+
+
+  <span class="cm">/*******************************************************************************************************************
+   *
+   *  Rendering
+   *
+   *******************************************************************************************************************/</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li>https://www.jetbrains.com/help/webstorm/file-template-variables.html</li>
+  <li>https://jekyllrb.com/docs/posts/</li>
+  <li>https://jekyllrb.com/docs/front-matter/</li>
+</ul>
+
+</div>
+</div>
+    <footer style="margin-bottom: 40px">
+      <hr />
+      <div class="d-flex justify-content-around p-5">
+        <a target="_blank" href="https://github.com/BeneLuWi" class="text-decoration-none display-4">
+          <i class="devicon-github-original"></i>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.xing.com/profile/Benedikt_LuekenWinkels/cv"
+          class="text-decoration-none display-4"
+        >
+          <i class="fa-brands fa-xing"></i>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/benedikt-l%C3%BCken-winkels/"
+          class="text-decoration-none display-4"
+        >
+          <i class="devicon-linkedin-plain"></i>
+        </a>
+        <a target="_blank" href="mailto:b.lueken.winkels@gmail.com" class="text-decoration-none display-4">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+      <hr />
+      <div class="p-3 d-flex justify-content-center">
+        <span>Benedikt Lüken-Winkels</span>
+      </div>
+    </footer>
+    <script src="/assets/js/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

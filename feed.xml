@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://beluwi.de/feed.xml" rel="self" type="application/atom+xml" /><link href="https://beluwi.de/" rel="alternate" type="text/html" /><updated>2025-02-04T14:03:59+00:00</updated><id>https://beluwi.de/feed.xml</id><title type="html">Benedikt Lüken-Winkels</title><subtitle>Personal website of Benedikt Lüken-Winkels. I showcase some of my projects and post about coding.</subtitle><entry><title type="html">Reduce Boilerplate Code with File Templates in IntelliJ</title><link href="https://beluwi.de/intellij-ide/2022/09/17/no-more-boilerplate.html" rel="alternate" type="text/html" title="Reduce Boilerplate Code with File Templates in IntelliJ" /><published>2022-09-17T14:04:44+00:00</published><updated>2022-09-17T14:04:44+00:00</updated><id>https://beluwi.de/intellij-ide/2022/09/17/no-more-boilerplate</id><content type="html" xml:base="https://beluwi.de/intellij-ide/2022/09/17/no-more-boilerplate.html"><![CDATA[<p>While I enjoy writing reusable code and templating, I don’t really like the actual copying and pasting, 
+modifying filenames only to see later on that I forgot to modify certain areas.</p>
+
+<p>If you use Jetbrains IDEs you probably already used <code class="language-plaintext highlighter-rouge">File and Code Templates</code> without knowing that you can create your 
+own templates, that do most of this for you…</p>
+
+<h2 id="easier-jekyll-blogging-with-file-templates-in-jetbrains">Easier Jekyll Blogging with File Templates in Jetbrains</h2>
+
+<ul>
+  <li>Go to <code class="language-plaintext highlighter-rouge">Preferences &gt; Editor &gt; File and Code Templates</code> or use the global Search <code class="language-plaintext highlighter-rouge">⬆⬆</code>(double shift) and
+search <code class="language-plaintext highlighter-rouge">File and Code Templates</code>, if you’re a cool short-cutter</li>
+  <li>Press <code class="language-plaintext highlighter-rouge">+</code> to add a template</li>
+  <li>Name it e.g. <code class="language-plaintext highlighter-rouge">Jekyll Blog Post</code> with the <code class="language-plaintext highlighter-rouge">md</code> extension</li>
+</ul>
+
+<p>You can use good number of variables to include logic and simplify/automate some of your blogging life, even in the file
+name (!).</p>
+
+<p>Since Jekyll Posts use a date in the file name, we can set the <code class="language-plaintext highlighter-rouge">File name</code> to: <code class="language-plaintext highlighter-rouge">${YEAR}-${MONTH}-${DAY}-${NAME}</code>.
+If you now use the template, you are asked to enter a file name and voilà: You already saved the time to look at the
+calendar for the new blog post!</p>
+
+<p><img src="/assets/images/2022-09-17-no-more-boilerplate/test-template.jpg" alt="Create Blog Post" /></p>
+
+<p><img src="/assets/images/2022-09-17-no-more-boilerplate/file-name.jpg" alt="New File Name with Date" /></p>
+
+<p>Now you can further edit the template and go crazy.
+I would recommend to at least cover the basics in the <code class="language-plaintext highlighter-rouge">Jekyll Front Matter</code>, so the template looks like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">${NAME}</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}:${SECOND} +0200</span>
+<span class="na">categories</span><span class="pi">:</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>You might find, that the predefined variables are not sufficient to your automation needs.
+Simply add any variable you want to use in the template, like <code class="language-plaintext highlighter-rouge">${main_category}</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">${NAME}</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}:${SECOND} +0200</span>
+<span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">${main_category}</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">new file</code> prompt now has an additional field <code class="language-plaintext highlighter-rouge">main category</code>, whose value is then inserted in the created file.</p>
+
+<p>Your finished template could look something like this:</p>
+
+<p><img src="/assets/images/2022-09-17-no-more-boilerplate/blog-template.jpg" alt="Blog Template" /></p>
+
+<h2 id="templating-for-react-components">Templating for React Components</h2>
+
+<p><em>If you only came here for the React Component Template, check out the upper part of the tutorial on how to create a file template</em> 😉</p>
+
+<p>Of course these file templates can simplify your everyday programming life as well. 
+If you have a certain file structure for e.g. your <code class="language-plaintext highlighter-rouge">React Components</code> this approach can greatly reduce the boilerplate
+code you have to write:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">FunctionComponent</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">type</span> <span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">}</span><span class="nx">Props</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="kd">const</span> <span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">}:</span>
+
+<span class="nx">FunctionComponent</span> <span class="o">&lt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">}</span><span class="nx">Props</span> <span class="o">&gt;</span> <span class="o">=</span> <span class="p">({})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="cm">/*******************************************************************************************************************
+   *
+   *  Hooks
+   *
+   *******************************************************************************************************************/</span>
+
+
+  <span class="cm">/*******************************************************************************************************************
+   *
+   *  Functions
+   *
+   *******************************************************************************************************************/</span>
+
+
+  <span class="cm">/*******************************************************************************************************************
+   *
+   *  Rendering
+   *
+   *******************************************************************************************************************/</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">$</span><span class="p">{</span><span class="nx">NAME</span><span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li>https://www.jetbrains.com/help/webstorm/file-template-variables.html</li>
+  <li>https://jekyllrb.com/docs/posts/</li>
+  <li>https://jekyllrb.com/docs/front-matter/</li>
+</ul>]]></content><author><name></name></author><category term="intellij-ide" /><category term="templating" /><category term="jekyll-blog" /><category term="react" /><category term="IntelliJ" /><summary type="html"><![CDATA[Be more productive with the use of file templates for your React Components and blog posts]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://beluwi.de/assets/images/2022-09-17-no-more-boilerplate/gears.jpg" /><media:content medium="image" url="https://beluwi.de/assets/images/2022-09-17-no-more-boilerplate/gears.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Repast Simphony (almost) without Eclipse</title><link href="https://beluwi.de/repast-simphony/2022/08/09/repast-without-eclipse.html" rel="alternate" type="text/html" title="Repast Simphony (almost) without Eclipse" /><published>2022-08-09T07:18:59+00:00</published><updated>2022-08-09T07:18:59+00:00</updated><id>https://beluwi.de/repast-simphony/2022/08/09/repast-without-eclipse</id><content type="html" xml:base="https://beluwi.de/repast-simphony/2022/08/09/repast-without-eclipse.html"><![CDATA[<p>This project uses the Repast Simphony JZombies Model, taken from the <a href="https://repast.github.io/docs/RepastJavaGettingStarted.pdf">Repast Java Tutorials</a> and shows how to use Repast Simphony (almost) without Eclipse.
+This is especially useful, when the model is built in a <code class="language-plaintext highlighter-rouge">ci</code> pipeline or one wants to use another IDE, like Intellij IDEA.</p>
+
+<p>The approach is developed and widely used by the team of the topic field <a href="https://www.dfki.de/en/web/research/research-departments/smart-data-knowledge-services/tf-cognitive-social-simulation">Cognitive Social Simulation</a> of the Research Department Smart Data &amp; Knowledge Services at DFKI.</p>
+
+<h3 id="check-out-the-code"><a href="https://github.com/DFKI/Repast-Simphony-Ant.git">Check out the Code</a></h3>
+
+<h2 id="requirements">Requirements</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/DFKI/Repast-Simphony-Ant.git
+</code></pre></div></div>
+
+<p>Install <a href="https://adoptium.net/?variant=openjdk11"><code class="language-plaintext highlighter-rouge">adoptopenjdk11</code></a></p>
+
+<p>To run and build the model, Repast Simphony Runtime Libraries are needed. It is sufficient to just download (and unzip)
+the <a href="https://cloud.dfki.de/owncloud/index.php/s/xDgjP748jCcMcKG"><code class="language-plaintext highlighter-rouge">plugins</code> folder</a>. Alternatively you can use your local
+installation of Repast Simphony 2.9 .</p>
+
+<ul>
+  <li>Note the path to the <code class="language-plaintext highlighter-rouge">plugins</code> folder. For Eclipse under macOS the path can look like<br />
+<code class="language-plaintext highlighter-rouge">/Applications/Repast Simphony 2.9.0/Eclipse.app/Contents/Eclipse/</code></li>
+  <li>The path has to be build with forward-slashes (<code class="language-plaintext highlighter-rouge">/</code>), on Windows too</li>
+</ul>
+
+<h2 id="run-from-command-line">Run from Command Line</h2>
+
+<ul>
+  <li>Install <code class="language-plaintext highlighter-rouge">ant</code></li>
+  <li>Set the <code class="language-plaintext highlighter-rouge">JAVA_HOME</code> environment variable to your <code class="language-plaintext highlighter-rouge">adoptopenjdk11</code> installation</li>
+  <li>
+    <p>Clone the Repository</p>
+  </li>
+  <li>In the project root run:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant build <span class="s2">"-Dplugins_loc=[/absolute/path/to/plugins]"</span>  <span class="s2">"-Dmodel_loc=[relative/path/to/model.rs]"</span>
+ant run-model <span class="s2">"-Dplugins_loc=[/absolute/path/to/plugins]"</span>  <span class="s2">"-Dmodel_loc=[relative/path/to/model.rs]"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Example:
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant run-model <span class="s2">"-Dplugins_loc=/Applications/Repast Simphony 2.9.0/Eclipse.app/Contents/Eclipse/"</span> <span class="s2">"-Dmodel_loc=./JZombies_Demo.rs"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="available-targets">Available Targets</h3>
+
+<ul>
+  <li>Headless Batch Run as described in https://repast.github.io/docs/RepastBatchRunsGettingStarted.pdf
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant run-batch <span class="s2">"-Dplugins_loc=[/absolute/path/to/plugins]"</span>  <span class="s2">"-Dmodel_loc=[relative/path/to/model.rs]"</span> <span class="s2">"-Dargs=-hl -r -model_dir [/absolute/path/to/project/root] -b batch/batch_params.xml -o output -c batch_config.properties"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Build the Model
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant build <span class="s2">"-Dplugins_loc=[/absolute/path/to/plugins]"</span>  <span class="s2">"-Dmodel_loc=[relative/path/to/model.rs]"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Debug Model, opening Port 5005 for a Remote JVM Debugging Session
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant debug-model <span class="s2">"-Dplugins_loc=[/absolute/path/to/plugins]"</span>  <span class="s2">"-Dmodel_loc=[relative/path/to/model.rs]"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run the Batch-Runner GUI
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant run-batch <span class="s2">"-Dplugins_loc=[/absolute/path/to/plugins]"</span>  <span class="s2">"-Dmodel_loc=[relative/path/to/model.rs]"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run the Model GUI
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ant run-model <span class="s2">"-Dplugins_loc=[/absolute/path/to/plugins]"</span>  <span class="s2">"-Dmodel_loc=[relative/path/to/model.rs]"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="run-the-repast-server-as-docker-container">Run the Repast Server as Docker Container</h2>
+
+<p>Reference to Repast Server: https://repast.github.io/docs/RepastNG/browser.html</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose up -d --build
+</code></pre></div></div>
+
+<p>Go to <code class="language-plaintext highlighter-rouge">http://localhost:5000</code></p>
+
+<ul>
+  <li>To run a different Ant Target, like a headless batch run, change the executed <code class="language-plaintext highlighter-rouge">CMD</code> in the <code class="language-plaintext highlighter-rouge">docker-compose.yml</code></li>
+</ul>
+
+<h2 id="build-and-run-in-intellij-idea">Build and Run in Intellij IDEA</h2>
+
+<ul>
+  <li>Clone the Repository</li>
+  <li>Create new project from existing sources and choose import project from external model</li>
+</ul>
+
+<p><img src="/assets/images/2022-08-26-repast-without-eclipse/import.png" alt="import" /></p>
+
+<ul>
+  <li>Select the <a href="https://github.com/DFKI/Repast-Simphony-Ant/blob/main/build.xml"><code class="language-plaintext highlighter-rouge">build.xml</code></a> file in the project root and set it as <code class="language-plaintext highlighter-rouge">Ant Build File</code> from the context menu</li>
+  <li>Open the <code class="language-plaintext highlighter-rouge">Ant View</code> and edit the properties of the <code class="language-plaintext highlighter-rouge">build</code> Ant Target</li>
+  <li>Add the <code class="language-plaintext highlighter-rouge">plugins_loc</code> property with the path to the <code class="language-plaintext highlighter-rouge">plugins</code> folder as value</li>
+  <li>Add the <code class="language-plaintext highlighter-rouge">model_loc</code> property with the value <code class="language-plaintext highlighter-rouge">./JZombies_Demo.rs</code></li>
+</ul>
+
+<p><img src="/assets/images/2022-08-26-repast-without-eclipse/ant-properties.png" alt="ant-properties" /></p>
+
+<ul>
+  <li>🔨 Build the Model by executing the <code class="language-plaintext highlighter-rouge">build</code> Ant Target</li>
+  <li>🚀 Run the Model by executing one of the <code class="language-plaintext highlighter-rouge">run-*</code> Ant Targets</li>
+</ul>
+
+<h3 id="create-a-run-config-recommended">Create a Run Config (recommended)</h3>
+
+<p>Example for <code class="language-plaintext highlighter-rouge">run-model</code>:</p>
+
+<ul>
+  <li>In the Context Menu of Ant Target select <code class="language-plaintext highlighter-rouge">Create Run Configuration</code></li>
+  <li>In the pop-up at <code class="language-plaintext highlighter-rouge">Before Launch</code> remove the default <code class="language-plaintext highlighter-rouge">Build</code> process and dd the <code class="language-plaintext highlighter-rouge">build</code> Ant Target</li>
+</ul>
+
+<p><img src="/assets/images/2022-08-26-repast-without-eclipse/run-config.png" alt="run-config" /></p>
+
+<h3 id="syntax-highlighting-in-intellij">Syntax Highlighting in Intellij</h3>
+
+<p>Under <code class="language-plaintext highlighter-rouge">File &gt; Project Structure &gt; Project Settings &gt; Modules &gt; JZombies_Demo &gt; Dependencies</code></p>
+
+<ul>
+  <li>Add the <code class="language-plaintext highlighter-rouge">lib</code> folder in the project root</li>
+  <li>Add the <code class="language-plaintext highlighter-rouge">repast.simphony.bin_and_src.jar</code> from the <code class="language-plaintext highlighter-rouge">plugins</code>
+folder: <code class="language-plaintext highlighter-rouge">[path_to_plugins]/plugins/repast.simphony.bin_and_src_2.9.0/repast.simphony.bin_and_src.jar</code></li>
+</ul>
+
+<p><img src="/assets/images/2022-08-26-repast-without-eclipse/import-module.png" alt="import-module" /></p>
+
+<h3 id="add-a-debugger-">Add a Debugger 🐞</h3>
+
+<ul>
+  <li>Create a <code class="language-plaintext highlighter-rouge">Remote JVM Debug</code> run configuration (the default settings should be correct)</li>
+  <li>Run the <code class="language-plaintext highlighter-rouge">debug-model</code> Ant Target</li>
+  <li>Start the <code class="language-plaintext highlighter-rouge">Debugger</code></li>
+</ul>
+
+<p><img src="/assets/images/2022-08-26-repast-without-eclipse/debugger.png" alt="debugger" /></p>]]></content><author><name></name></author><category term="repast-simphony" /><category term="agent-based-modelling" /><category term="repast-simphony" /><category term="IntelliJ" /><summary type="html"><![CDATA[This is a small guide on how to use Repast Simphony in the Intellij IDEs, which turns out to be quite tricky...]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://beluwi.de/assets/images/2022-08-26-repast-without-eclipse/butterfly.jpg" /><media:content medium="image" url="https://beluwi.de/assets/images/2022-08-26-repast-without-eclipse/butterfly.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
